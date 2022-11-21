@@ -1,0 +1,10 @@
+
+#pong{
+  border: 2px solid rgb(241, 13, 13);
+  position: absolute;
+  margin :auto;
+  top:0;
+  right:0;
+  left:0;
+  bottom:0;
+}
