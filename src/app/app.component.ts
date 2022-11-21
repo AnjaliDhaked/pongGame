@@ -11,23 +11,15 @@ export class AppComponent implements OnInit {
   // title = 'pong';
   // socket!: Socket;..
 
-  constructor(private socketService: SocketService,     
+  constructor(private socketService: SocketService,
     private router: Router,
     private activatedRoute: ActivatedRoute){
 
   }
-<<<<<<< Updated upstream
   ngOnInit(): void{
     setTimeout(async () => {
       this.socketService.init();
     }, 1000);
-=======
-  ngOnInit() {
-    this.socket = io('https://ping-pong-iic.herokuapp.com/');
-    this.socket.on("connect", () => {
-      console.log("connect", this.socket); // true
-    });
->>>>>>> Stashed changes
   }
-  
+
 }
