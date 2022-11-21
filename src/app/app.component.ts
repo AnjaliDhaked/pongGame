@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { io, Socket } from "socket.io-client";
-
+import { SocketService } from './services/socket.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,17 +9,17 @@ import { io, Socket } from "socket.io-client";
 })
 export class AppComponent implements OnInit {
   // title = 'pong';
-  socket!: Socket;
+  // socket!: Socket;..
 
-
-  constructor() {
+  constructor(private socketService: SocketService,     
+    private router: Router,
+    private activatedRoute: ActivatedRoute){
 
   }
-  ngOnInit() {
-    this.socket = io('http://localhost:3000');
-    this.socket.on("connect", () => {
-      console.log("connect", this.socket); // true
-    });
+  ngOnInit(): void{
+    setTimeout(async () => {
+      this.socketService.init();
+    }, 1000);
   }
-
+  
 }
