@@ -11,7 +11,7 @@ export class QrComponent implements OnInit {
   name = 'Angular ' + VERSION.major;
   elementType = NgxQrcodeElementTypes.URL;
   correctionLevel = NgxQrcodeErrorCorrectionLevels.HIGH;
-  value = 'https://angular.io/';
+  value = 'http://localhost:4300/player';
   constructor() { }
 
   ngOnInit(): void {

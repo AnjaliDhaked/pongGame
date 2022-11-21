@@ -7,14 +7,13 @@ import { Socket, io } from 'socket.io-client';
 })
 export class SocketService {
   socket!: Socket;
- 
+
   constructor() {
 
   }
 
   init() {
-    this.socket = io("http://localhost:3000", { transports: ['websocket', 'polling', 'flashsocket'] });
-
+    this.socket = io("https://ping-pong-iic.herokuapp.com/", { transports: ['websocket', 'polling', 'flashsocket'] });
     this.socket.on("connect", this.onConnect.bind(this));
     this.socket.on('connect_error', this.onConnectError.bind(this));
     this.socket.on("disconnect", this.onDisconnect.bind(this));
