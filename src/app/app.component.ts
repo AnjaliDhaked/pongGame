@@ -16,10 +16,18 @@ export class AppComponent implements OnInit {
     private activatedRoute: ActivatedRoute){
 
   }
+<<<<<<< Updated upstream
   ngOnInit(): void{
     setTimeout(async () => {
       this.socketService.init();
     }, 1000);
+=======
+  ngOnInit() {
+    this.socket = io('https://ping-pong-iic.herokuapp.com/');
+    this.socket.on("connect", () => {
+      console.log("connect", this.socket); // true
+    });
+>>>>>>> Stashed changes
   }
   
 }

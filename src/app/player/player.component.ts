@@ -24,7 +24,7 @@ export class PlayerComponent implements OnInit {
     this.ball = {
       x: this.myCanvas.nativeElement.width / 2,
       y: this.myCanvas.nativeElement.height / 2,
-      radius: 15,
+      radius: 10,
       velocityX: 5,
       velocityY: 5,
       speed: 7,
