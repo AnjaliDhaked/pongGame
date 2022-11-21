@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-player',
@@ -65,7 +65,6 @@ export class PlayerComponent implements OnInit {
     this.startUI();
   }
 
-
   reactangle(x: any, y: any, w: any, h: any, color: any) {
     this.context.fillStyle = color;
     this.context.fillRect(x, y, w, h);
@@ -88,7 +87,21 @@ export class PlayerComponent implements OnInit {
 
     this.gameUser.y = evt.clientY - rect.top - this.gameUser.height / 2;
   }
-
+  
+  @HostListener('window:keyup', ['$event'])
+  control(e: any){
+console.log(e);
+    
+    if(e.keyCode === 37){
+      if(this.computer.y > 50)
+         this.computer.y -=80
+    }
+    else if(e.keyCode === 39){
+      if(this.computer.y < 350)
+      
+        this.computer.y +=80
+    }
+  }
 
   ballDirectionReset() {
     this.ball.x = this.myCanvas.nativeElement.width / 2;
@@ -97,13 +110,11 @@ export class PlayerComponent implements OnInit {
     this.ball.speed = 7;
   }
 
-
   dottedNet() {
     for (let i = 0; i <= this.myCanvas.nativeElement.height; i += 15) {
       this.reactangle(this.dottedLine.x, this.dottedLine.y + i, this.dottedLine.width, this.dottedLine.height, this.dottedLine.color);
     }
   }
-
 
   drawText(text: any, x: any, y: any) {
     this.context.fillStyle = "blue";
@@ -128,11 +139,11 @@ export class PlayerComponent implements OnInit {
   updatee() {
 
     if (this.ball.x - this.ball.radius < 0) {
-      this.gameUser.score++;
+      this.computer.score++;
 
       this.ballDirectionReset();
     } else if (this.ball.x + this.ball.radius > this.myCanvas.nativeElement.width) {
-      this.computer.score++;
+      this.gameUser.score++;
 
       this.ballDirectionReset();
     }
@@ -151,8 +162,7 @@ export class PlayerComponent implements OnInit {
     this.ball.x += this.ball.velocityX;
     this.ball.y += this.ball.velocityY;
 
-
-    this.computer.y += ((this.ball.y - (this.computer.y + this.computer.height / 2))) * 0.1;
+    // this.computer.y += ((this.ball.y - (this.computer.y + this.computer.height / 2))) * 0.1;
 
     if (this.ball.y - this.ball.radius < 0 || this.ball.y + this.ball.radius > this.myCanvas.nativeElement.height) {
       this.ball.velocityY = -this.ball.velocityY;
@@ -181,6 +191,5 @@ export class PlayerComponent implements OnInit {
     this.reactangle(this.computer.x, this.computer.y, this.computer.width, this.computer.height, this.computer.color);
     this.arc(this.ball.x, this.ball.y, this.ball.radius, this.ball.color);
   }
-
 
 }
