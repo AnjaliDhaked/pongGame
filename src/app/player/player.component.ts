@@ -87,19 +87,19 @@ export class PlayerComponent implements OnInit {
 
     this.gameUser.y = evt.clientY - rect.top - this.gameUser.height / 2;
   }
-  
+
   @HostListener('window:keyup', ['$event'])
-  control(e: any){
-console.log(e);
-    
-    if(e.keyCode === 37){
-      if(this.computer.y > 50)
-         this.computer.y -=80
+  control(e: any) {
+    console.log(e);
+
+    if (e.keyCode === 38) {
+      if (this.computer.y > 50)
+        this.computer.y -= 80
     }
-    else if(e.keyCode === 39){
-      if(this.computer.y < 350)
-      
-        this.computer.y +=80
+    else if (e.keyCode === 40) {
+      if (this.computer.y < 350)
+
+        this.computer.y += 80
     }
   }
 
