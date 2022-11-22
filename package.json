@@ -2,7 +2,7 @@
   "name": "pong",
   "version": "0.0.0",
   "engines": {
-    "node": "18.12.1",
+    "node": "16.16.0",
     "npm": "8.19.x"
   },
   "scripts": {
@@ -30,7 +30,7 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "ngx-deploy-npm": "^4.3.6",
-    "node": "^18.1.0",
+    "node": "^16.16.0",
     "nodemon": "^2.0.20",
     "rxjs": "~7.5.0",
     "socket.io": "^4.5.3",
