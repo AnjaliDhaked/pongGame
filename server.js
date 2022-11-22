@@ -4,7 +4,7 @@ const bp = require("body-parser");
 
 // const qr = require("qrcode");
 require("dotenv").config();
-const port = 3000;
+// const port = 3000;
 const { Server } = require("socket.io");
 const io = new Server({
     cors: {
@@ -52,4 +52,4 @@ app.use(bp.json());
 
  });
 
- app.listen(port, () => console.log("Server at 3000"));
+ app.listen(process.env.PORT || 3000, () => console.log("Server at 3000"));
