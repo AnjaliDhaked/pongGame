@@ -2,50 +2,44 @@
   "name": "pong",
   "version": "0.0.0",
   "engines": {
-    "node": "18.12.1",
+    "node": "16.16.0",
     "npm": "8.19.x"
   },
   "scripts": {
     "ng": "ng",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
-    "postinstall": "ng build --aot -prod",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "heroku-postbuild": "ng build"
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "^14.2.0",
+    "@angular/cli": "^15.0.0",
     "@angular/common": "^14.2.0",
     "@angular/compiler": "^14.2.0",
+    "@angular/compiler-cli": "^14.2.0",
     "@angular/core": "^14.2.0",
     "@angular/forms": "^14.2.0",
     "@angular/platform-browser": "^14.2.0",
     "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.2.0",
     "@angular-devkit/build-angular": "^14.2.0",
-    "@angular/cli": "~14.2.0",
-    "@angular/compiler-cli": "^14.2.0",
     "@techiediaries/ngx-qrcode": "^9.1.0",
     "angularx-qrcode": "^14.0.0",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "node": "^18.1.0",
+    "ngx-deploy-npm": "^4.3.6",
+    "node": "^16.16.0",
     "nodemon": "^2.0.20",
     "rxjs": "~7.5.0",
     "socket.io": "^4.5.3",
     "socket.io-client": "^4.5.3",
     "tslib": "^2.3.0",
-    "zone.js": "~0.11.4",
-    "typescript": "~4.7.2"
+    "typescript": "~4.7.2",
+    "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^14.2.0",
-    "@angular/cli": "^15.0.0",
-    "@angular/compiler-cli": "^14.2.12",
     "@types/jasmine": "~4.0.0",
     "jasmine-core": "~4.3.0",
     "karma": "~6.4.0",
@@ -53,6 +47,6 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
-    "typescript": "~4.7.2"
+    "ngx-deploy-npm": "^4.3.6"
   }
 }
