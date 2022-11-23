@@ -25,7 +25,9 @@ export class PlayerComponent implements OnInit {
     const x = event.accelerationIncludingGravity.x;
     const y = event.accelerationIncludingGravity.y;
     const z = event.accelerationIncludingGravity.z;
-    console.log(x, y, z);
+    alert(x);
+    alert(y);
+    alert(z);
     // Do something awesome.
   }
 
