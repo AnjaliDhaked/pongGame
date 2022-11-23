@@ -2,13 +2,18 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PlayerComponent } from './player/player.component';
 import { QrComponent } from './qr/qr.component';
+import { UsernameComponent } from './username/username.component';
 
 const routes: Routes = [
-  { path: '', component: QrComponent },
+  { path: 'qr', component: QrComponent },
   {
     path: 'player',
     component: PlayerComponent,
   },
+  {
+    path: '',
+    component: UsernameComponent
+  }
 ];
 
 @NgModule({

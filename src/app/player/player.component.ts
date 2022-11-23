@@ -19,6 +19,17 @@ export class PlayerComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  @HostListener('window:devicemotion', ['$event'])
+  handleMotionEvent(event: any) {
+
+    const x = event.accelerationIncludingGravity.x;
+    const y = event.accelerationIncludingGravity.y;
+    const z = event.accelerationIncludingGravity.z;
+    console.log(x, y, z);
+    // Do something awesome.
+  }
+
+
   ngAfterViewInit(): void {
     this.context = this.myCanvas.nativeElement.getContext('2d');
     this.ball = {

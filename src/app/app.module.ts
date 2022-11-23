@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { PlayerComponent } from './player/player.component';
 import { QrComponent } from './qr/qr.component';
 import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
+import { UsernameComponent } from './username/username.component';
 @NgModule({
   declarations: [
     AppComponent,
     PlayerComponent,
-    QrComponent
+    QrComponent,
+    UsernameComponent
   ],
   imports: [
     BrowserModule,
